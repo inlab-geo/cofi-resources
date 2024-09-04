@@ -1,0 +1,9 @@
+format: jb-book
+root: docs/index
+parts:
+  - caption: Parameter Estimation
+    chapters:
+    - file: docs/parameter_estimation/matrix_based_solvers.md
+      sections: 
+        - file: docs/parameter_estimation/complex_linear_systems.md
+    - file: docs/parameter_estimation/optimization.md
