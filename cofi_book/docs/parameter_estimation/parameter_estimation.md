@@ -1,6 +1,6 @@
 # Parameter Estimation
 
-Givendata that can have a random compontent paraemter estimation seeks to infer the paramters of the underlying setting taht expalins these data.
+Given data that can have a random compontent paramrter estimation seeks to infer the paramrters of the underlying setting that explains these data.
 
 
 
