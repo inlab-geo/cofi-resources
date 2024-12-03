@@ -3,7 +3,9 @@ root: docs/index
 parts:
   - caption: Parameter Estimation
     chapters:
-    - file: docs/parameter_estimation/matrix_based_solvers.md
+    - file: docs/parameter_estimation/introduction.md
       sections: 
         - file: docs/parameter_estimation/complex_linear_systems.md
-    - file: docs/parameter_estimation/optimization.md
+  - caption: Software Carpentry
+    chapters:
+    - file: docs/software_carpentry/fortran_via_ctypes.md
