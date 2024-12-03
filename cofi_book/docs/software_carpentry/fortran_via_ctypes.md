@@ -3,7 +3,7 @@
 ## Background
 
 
-Pyrthon's [ctypes](https://docs.python.org/3/library/ctypes.html) interface provides an avenue to directly from Python calling libraries that provide functions that can be called from C. This provides an avenue to call Fortran code that is callable from, C without the need to modify the Fortran code.  An excellen summary of the various approaches to make calls to a shared library written in Fortran from other language is given [here](https://foreign-fortran.readthedocs.io/en/latest/index.html).
+Python's [ctypes](https://docs.python.org/3/library/ctypes.html) interface provides an avenue to directly from Python calling libraries that provide functions that can be called from C. This provides an avenue to call Fortran code that is callable from, C without the need to modify the Fortran code.  An excellen summary of the various approaches to make calls to a shared library written in Fortran from other language is given [here](https://foreign-fortran.readthedocs.io/en/latest/index.html).
 
 Cmake is a software build system that is the defacto standard for C++ projects and the [scikit-build](https://scikit-build.readthedocs.io/en/latest/) package provides a bridge between the setuptools Python module and Cmake. 
 
