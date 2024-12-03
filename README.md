@@ -10,7 +10,7 @@ The book is using [jupyter books](www.jupyterbook.org) and can be built locally 
 jupyter-book build cofi_book/
 ```
 
-It also gets deployed via github actions and is available at [https://inlab.au/cofi-resources/docs/index.html] (https://inlab.au/cofi-resources/docs/index.html)
+It also gets deployed via github actions and is available at [https://inlab.au/cofi-resources/docs/index.html](https://inlab.au/cofi-resources/docs/index.html)
 
 
 
