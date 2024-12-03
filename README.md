@@ -5,7 +5,7 @@ it is a collection of information that is of relevance across InLab's open sourc
 ecosytem.
 
 
-The book is using (jupyter books)[jupyterbook.org] can be built locally after cloning the repository using
+The book is using [jupyter books[(www.jupyterbook.org) can be built locally after cloning the repository using
 ```
 jupyter-book build cofi_book/
 ```
