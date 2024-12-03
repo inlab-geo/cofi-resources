@@ -6,7 +6,7 @@ A collection of markdown files that may one day become a CoFI book. At this mome
 
 The book is using [jupyter books](www.jupyterbook.org) and can be built locally after cloning the repository using
 ```
-jupyter-book build cofi_book/
+jupyter-book build .
 ```
 
 It also gets deployed via github actions and is available at [https://inlab.au/cofi-resources/docs/index.html](https://inlab.au/cofi-resources/docs/index.html)
