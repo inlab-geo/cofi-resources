@@ -18,8 +18,7 @@ to recognise them  and it appears that they need to be created on the main branc
 
 ## Unit testing
 
-The complete workflow that runs the tests is given below it splits up into several parts
-and uses predefined workflows.
+The complete github action `.github/workflows/test.yaml` that runs the tests is given below and it splits up into several parts and uses predefined github action.
 
 [https://github.com/actions/checkout](https://github.com/actions/checkout)
 [https://github.com/fortran-lang/setup-fortran](https://github.com/fortran-lang/setup-fortran)
@@ -140,7 +139,8 @@ Here we assume the project already exists on pypi. The next step is to select
 the project and then select publishing and add a new publisher for github by 
 completing the fields.
 
-This then allows to use the following github action placed in `.github/workflows` to 
+This then allows to use the following github action  in `.github/workflows/build_and_deploy.yaml
+` to 
 deploy the project to pypi whenever there is a new tag created and the version number in 
 `pyproject.toml` updated.
 
