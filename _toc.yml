@@ -9,3 +9,4 @@ parts:
   - caption: Software Carpentry
     chapters:
     - file: docs/software_carpentry/fortran_via_ctypes.md
+    - file: docs/software_carpentry/python_packaging.md
