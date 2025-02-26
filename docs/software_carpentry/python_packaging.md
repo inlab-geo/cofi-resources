@@ -90,11 +90,10 @@ a github action. Care must be taken with the release number defined in `pyprojec
 and it needs to match the tag that is being used to automatically trigger a release. 
 That is when a tag `like v1.2.3` is pushed, the workflow is triggered.
 
-The initial upload of the package to pypi is different fromm subsequent updates 
-from github directly. Thus for the initial upload it is recommended to use a version number
-that is not the initial release in `pyproject.toml` something like `0.0.1dev`
+In the approach outlined here the initial upload of the package to pypi is different from
+subsequent updates from github directly. Thus for the initial upload it is recommended to use a version number that is not the initial release in `pyproject.toml` something like `0.0.1dev`
 
-The alternative is to follow the instructions here 
+The alternative is to follow the instructions here [https://packaging.python.org/en/latest/guides/publishing-package-distribution-releases-using-github-actions-ci-cd-workflows/](https://packaging.python.org/en/latest/guides/publishing-package-distribution-releases-using-github-actions-ci-cd-workflows/) but this requires more tinkering with github actions than the approach outlined below.
 
 ### Initial upload to PyPI
 
