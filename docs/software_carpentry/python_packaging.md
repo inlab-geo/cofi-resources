@@ -92,6 +92,10 @@ That is when a tag `like v1.2.3` is pushed, the workflow is triggered.
 In the approach outlined here the initial upload of the package to pypi is different from
 subsequent updates from github directly. Thus for the initial upload it is recommended to use a version number that is not the initial release in `pyproject.toml` something like `0.0.1dev`
 
+```{warning}
+Version number on pypi are unique once a version has been uploaded it can not be replaced or deleted. Hence the suggestion to use `0.0.1dev` for the initial uploade and or use [https://packaging.python.org/en/latest/guides/using-testpypi/](https://packaging.python.org/en/latest/guides/using-testpypi/)
+```
+
 The alternative is to follow the instructions here [https://packaging.python.org/en/latest/guides/publishing-package-distribution-releases-using-github-actions-ci-cd-workflows/](https://packaging.python.org/en/latest/guides/publishing-package-distribution-releases-using-github-actions-ci-cd-workflows/) but this requires more tinkering with github actions than the approach outlined below.
 
 ### Initial upload to PyPI
