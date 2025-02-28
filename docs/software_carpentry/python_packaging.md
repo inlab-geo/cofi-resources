@@ -1,28 +1,27 @@
 # Continuous integration for Python Projects on GitHub
 
-This assumes that a python package has been created that:
+These instructions assume that a python package has been created that:
 - can successfully be installed using `pip install .` from its main directory
 - is available on Github
-- contains unit test using the `pytest` framework
+- contains unit tests using the `pytest` framework
 
-We will be using `https://github.com/inlab-geo/pyfm2d` as example and create two GitHub 
-actions that is one to test the package and one to deploy it on pypi.
+We will be using [https://github.com/inlab-geo/pyfm2d](https://github.com/inlab-geo/pyfm2d`) 
+as an example and create two GitHub actions that is one to test the package and one to deploy it on pypi.
 
-Github actions are yml files that need to be placed in `.github/workflows` for github 
-to recognise them  and it appears that they need to be created on the main branch.
+Github actions are `yml`/`yaml` files that need to be placed in `.github/workflows` for github 
+to recognise them and it appears that they need to be created on the main branch.
 
-[https://packaging.python.org/en/latest/guides/publishing-package-distribution-releases-using-github-actions-ci-cd-workflows/
+The instructions provided here are based on the infomration available here
+- [https://packaging.python.org/en/latest/guides/publishing-package-distribution-releases-using-github-actions-ci-cd-workflows/
 ](https://packaging.python.org/en/latest/guides/publishing-package-distribution-releases-using-github-actions-ci-cd-workflows/)
-
-[https://packaging.python.org/en/latest/tutorials/packaging-projects/](https://packaging.python.org/en/latest/tutorials/packaging-projects/)
+- [https://packaging.python.org/en/latest/tutorials/packaging-projects/](https://packaging.python.org/en/latest/tutorials/packaging-projects/)
 
 ## Unit testing
 
-The complete github action `.github/workflows/test.yaml` that runs the tests is given below and it splits up into several parts and uses predefined github action.
-
-[https://github.com/actions/checkout](https://github.com/actions/checkout)
-[https://github.com/fortran-lang/setup-fortran](https://github.com/fortran-lang/setup-fortran)
-[https://github.com/astral-sh/setup-uv](https://github.com/astral-sh/setup-uv)
+The complete github action `.github/workflows/test.yaml` that runs the tests is given below and it splits up into several parts and uses the following predefined github action.
+- [https://github.com/actions/checkout](https://github.com/actions/checkout)
+- [https://github.com/fortran-lang/setup-fortran](https://github.com/fortran-lang/setup-fortran)
+- [https://github.com/astral-sh/setup-uv](https://github.com/astral-sh/setup-uv)
 
 
 ```
@@ -90,13 +89,15 @@ and it needs to match the tag that is being used to automatically trigger a rele
 That is when a tag `like v1.2.3` is pushed, the workflow is triggered.
 
 In the approach outlined here the initial upload of the package to pypi is different from
-subsequent updates from github directly. Thus for the initial upload it is recommended to use a version number that is not the initial release in `pyproject.toml` something like `0.0.1dev`
+subsequent updates from github directly. Thus for the initial upload it is recommended 
+to use a version number that is not the initial release in `pyproject.toml` something 
+like `0.0.1dev`
 
 ```{note}
-Version number on pypi are unique once a version has been uploaded it can not be replaced or deleted. Hence the suggestion to use `0.0.1dev` for the initial uploade and or use [https://packaging.python.org/en/latest/guides/using-testpypi/](https://packaging.python.org/en/latest/guides/using-testpypi/)
+Version numbers on pypi are unique once a version has been uploaded it can not be replaced or deleted. Hence the suggestion to use `0.0.1dev` for the initial uploade and/or use [https://packaging.python.org/en/latest/guides/using-testpypi/](https://packaging.python.org/en/latest/guides/using-testpypi/) when experimenting.
 ```
 
-The alternative is to follow the instructions here [https://packaging.python.org/en/latest/guides/publishing-package-distribution-releases-using-github-actions-ci-cd-workflows/](https://packaging.python.org/en/latest/guides/publishing-package-distribution-releases-using-github-actions-ci-cd-workflows/) but this requires more tinkering with github actions than the approach outlined below.
+The alternative is to follow the instructions here [https://packaging.python.org/en/latest/guides/publishing-package-distribution-releases-using-github-actions-ci-cd-workflows/](https://packaging.python.org/en/latest/guides/publishing-package-distribution-releases-using-github-actions-ci-cd-workflows/) but this requires more editing of github actions than the approach outlined below.
 
 ### Initial upload to PyPI
 
@@ -104,14 +105,12 @@ Install the latest version PyPA build
 
 `python3 -m pip install --upgrade build`
 
-
 Now run this command from the same directory where pyproject.toml is located:
 
 `python3 -m build`
 
 This will create distribution files for the platform that is being used 
 in the `dist` subdirectory. These are the initial upload to PyPI.
-
 
 To securely upload your project, you’ll need a PyPI API token. Create one 
 at [https://pypi.org/manage/account/#api-tokens](https://pypi.org/manage/account/#api-tokens), 
@@ -131,7 +130,7 @@ When prompted for an API token use the token value, including the pypi- prefix
 created on the pypi website.
 
 This creates a project on PyPI which we now can publish to using github actions. The 
-access token that has been created can be deleted and is no longer needed.
+access token that has been created can now be deleted as it is no longer needed.
 
 ### Publishing from github to PyPI
 
@@ -140,18 +139,15 @@ project exists on pypi or can be setup directly for a new project on pypi follow
 steps here [https://packaging.python.org/en/latest/guides/publishing-package-distribution-releases-using-github-actions-ci-cd-workflows/](https://packaging.python.org/en/latest/guides/publishing-package-distribution-releases-using-github-actions-ci-cd-workflows/)
 
 Here we assume the project already exists on pypi. The next step is to select 
-the project and then select publishing and add a new publisher for github by 
-completing the fields.
+the project on its pypi page and then select publishing and add a new publisher 
+for github by  completing the fields.
 
 This then allows to use the following github action  in `.github/workflows/build_and_deploy.yaml
-` to 
-deploy the project to pypi whenever there is a new tag created and the version number in 
+` to deploy the project to pypi whenever there is a new tag created and the version number in 
 `pyproject.toml` updated.
-
 
 ```
 Name: Build and Deploy
-
 
 # workflow is run either manually triggerd, if there is a tag being added to a commit or in
 # caase of a pull request.
