@@ -242,3 +242,8 @@ jobs:
         uses: pypa/gh-action-pypi-publish@v1.12.3
 ```
 
+
+### Github actions
+
+The two github actions we defined in the two yaml files are avialbe for the repository on its action subpage.
+[https://github.com/inlab-geo/pyfm2d/actions](https://github.com/inlab-geo/pyfm2d/actions)
