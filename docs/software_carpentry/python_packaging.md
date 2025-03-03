@@ -17,12 +17,10 @@ The instructions provided here are based on the infomration available here
 - [https://packaging.python.org/en/latest/tutorials/packaging-projects/](https://packaging.python.org/en/latest/tutorials/packaging-projects/)
 
 ## Unit testing
-
 The complete github action `.github/workflows/test.yaml` that runs the tests is given below and it splits up into several parts and uses the following predefined github action.
 - [https://github.com/actions/checkout](https://github.com/actions/checkout)
 - [https://github.com/fortran-lang/setup-fortran](https://github.com/fortran-lang/setup-fortran)
 - [https://github.com/astral-sh/setup-uv](https://github.com/astral-sh/setup-uv)
-
 
 ```
 name: Run Tests
@@ -76,9 +74,8 @@ jobs:
           uv run pytest 
 ```
 
-`pyfm2d` contains  fortran code ithat needs to be compiled for a package where 
-this is not the case there is no need to setup a fortran compiler and this step 
-can be omitted.
+The package `pyfm2d` contains  fortran code hat needs to be compiled for a package where this is not the 
+case there is no need to setup a fortran compiler and this step  can be omitted.
 
 
 ## Publishing on PyPI
@@ -93,8 +90,8 @@ subsequent updates from github directly. Thus for the initial upload it is recom
 to use a version number that is not the initial release in `pyproject.toml` something 
 like `0.0.1dev`
 
-```{note}
-Version numbers on pypi are unique once a version has been uploaded it can not be replaced or deleted. Hence the suggestion to use `0.0.1dev` for the initial uploade and/or use [https://packaging.python.org/en/latest/guides/using-testpypi/](https://packaging.python.org/en/latest/guides/using-testpypi/) when experimenting.
+```{warning}
+Version numbers on pypi are **unique** once a version has been uploaded it can not be replaced or deleted. Hence the suggestion to use `0.0.1dev` for the initial uploade and/or use [https://packaging.python.org/en/latest/guides/using-testpypi/](https://packaging.python.org/en/latest/guides/using-testpypi/) when experimenting.
 ```
 
 The alternative is to follow the instructions here [https://packaging.python.org/en/latest/guides/publishing-package-distribution-releases-using-github-actions-ci-cd-workflows/](https://packaging.python.org/en/latest/guides/publishing-package-distribution-releases-using-github-actions-ci-cd-workflows/) but this requires more editing of github actions than the approach outlined below.
@@ -142,7 +139,7 @@ Here we assume the project already exists on pypi. The next step is to select
 the project on its pypi page and then select publishing and add a new publisher 
 for github by  completing the fields.
 
-This then allows to use the following github action  in `.github/workflows/build_and_deploy.yaml
+This then allows to use the following github action in `.github/workflows/build_and_deploy.yaml
 ` to deploy the project to pypi whenever there is a new tag created and the version number in 
 `pyproject.toml` updated.
 
