@@ -137,7 +137,8 @@ steps here [https://packaging.python.org/en/latest/guides/publishing-package-dis
 
 Here we assume the project already exists on pypi. The next step is to select 
 the project on its pypi page and then select publishing and add a new publisher 
-for github by  completing the fields.
+for github by completing the fields. It is recommended to constrain the created 
+trusted publisher to the github action 'deployment' environment.
 
 This then allows to use the following github action in `.github/workflows/build_and_deploy.yaml
 ` to deploy the project to pypi whenever there is a new tag created and the version number in 
@@ -242,5 +243,5 @@ jobs:
 
 ### Github actions
 
-The two github actions we defined in the two yaml files are avialbe for the repository on its action subpage.
+The two github actions we defined in the two yaml files are aviailabe for the repository on its action subpage.
 [https://github.com/inlab-geo/pyfm2d/actions](https://github.com/inlab-geo/pyfm2d/actions)
