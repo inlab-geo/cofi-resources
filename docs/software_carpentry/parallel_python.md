@@ -5,20 +5,20 @@ the capabilities provided by the standard libraries that are part of python and 
 other being the mpi standard.
 
 
-# Native Python High-level interface for asynchronously executing callables
+## Native Python High-level interface for asynchronously executing callables
 
 Since version 3.2 python provides a a high-level interface for asynchronously executing callables.
 
 [https://docs.python.org/3/library/concurrent.futures.html#concurrent.futures.ProcessPoolExecutor](https://docs.python.org/3/library/concurrent.futures.html#concurrent.futures.ProcessPoolExecutor)
 
-## Thread pool
+### Thread pool
 `concurrent.futures.ThreadPoolExecutor` is an Executor subclass that uses a pool of threads to execute calls asynchronously. 
  - Threads are lightweight execution units managed by the Python interpreter (and ultimately the OS) within a single process.
  - Threads within the same process share the same memory space.
  - In standard CPython (the most common Python implementation), the Global Interpreter Lock (GIL) prevents multiple threads from executing Python bytecode simultaneously within the same process.
 
 
-## Process pool 
+### Process pool 
 
 `concurrent.futures.ProcessPoolExecutor` An Executor subclass that executes calls 
 asynchronously using a pool of at most max_workers processes
@@ -56,7 +56,7 @@ def _calc_wavefronts_multithreading(
     return reduce(operator.add, result_list)
 ```
 
-# Native Python lower level interfaces for asynchronously executing callables
+## Native Python lower level interfaces for asynchronously executing callables
 
 The aim of `concurrent.futures` is to hide some of the complexities 
 of the underlying threading and multiprocessing mechanisms and thus to make parallel 
@@ -70,19 +70,18 @@ programming more accessible and less error-prone for common scenarios.
 
 
 
-# Pipeline processing
+## Pipeline processing
 
-## joblib
+### joblib
 
 joblib is a python library implementing a pipeline processing system.
 
 [https://joblib.readthedocs.io/en/stable/](https://joblib.readthedocs.io/en/stable/)
 
 
-# Message Passing interface 
+## Message Passing interface 
 
-
-## mpi4py
+### mpi4py
 
 [https://mpi4py.readthedocs.io/en/stable/index.html](https://mpi4py.readthedocs.io/en/stable/index.html)
 
@@ -93,9 +92,9 @@ and use MPI API concepts such as scatter and gather.
 
 [https://mpi4py.readthedocs.io/en/stable/tutorial.html#running-python-scripts-with-mpi](https://mpi4py.readthedocs.io/en/stable/tutorial.html#running-python-scripts-with-mpi)
 
-# Uniform interfaces
+## Uniform interfaces
 
-## schwimmbad
+### schwimmbad
 
 Schwimmbad implement parallel processing pools with an ability to switching easily between local development (e.g., serial processing or with multiprocessing) and deployment on a cluster or supercomputer (via, e.g., MPI or JobLib).
 
