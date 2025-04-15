@@ -68,7 +68,9 @@ programming more accessible and less error-prone for common scenarios.
 ### multiprocessing
 [https://docs.python.org/3/library/multiprocessing.html](https://docs.python.org/3/library/multiprocessing.html)
 
+Mutliprocessign behaves differently on Windows and POSIX operating systems, that is `multiprocessing.set_start_method("fork")` appears to nor work on Windows where it appears that one needs to use `multiprocessing.set_start_method("spawn")`
 
+(https://britishgeologicalsurvey.github.io/science/python-forking-vs-spawn/)[https://britishgeologicalsurvey.github.io/science/python-forking-vs-spawn/]
 
 ## Pipeline processing
 
