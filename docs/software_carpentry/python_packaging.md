@@ -240,6 +240,39 @@ jobs:
         uses: pypa/gh-action-pypi-publish@v1.12.3
 ```
 
+### Triggering an update on pypi
+
+PyPI works by releases taht is we have to increase the version number for a release to happen. For pyfm2d this means updating the version number in the `pyproject.yml` file.
+
+```
+[build-system]
+requires = ["scikit-build-core[rich,pyproject]"]
+build-backend = "scikit_build_core.build"
+
+[project]
+name = "pyfm2d"
+version = "0.1.4"
+requires-python = ">=3.9"
+dependencies = [
+    "cartopy>=0.2.3",
+    "matplotlib>=3.9.4",
+    "numpy>=2.0.2",
+    "pyrr>=0.10.3",
+    "scipy>=1.13.1",
+    "tqdm>=4.67.1",
+]
+
+[project.optional-dependencies]
+notebooks = [
+    "jupyterlab>=4.3.4",
+]
+
+[dependency-groups]
+dev = [
+    "pytest>=8.3.4",
+]
+```
+
 
 ### Github actions
 
