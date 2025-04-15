@@ -242,7 +242,7 @@ jobs:
 
 ### Triggering an update on pypi
 
-PyPI works by releases that is we have to increase the version number for a release to happen and create the release on github. For pyfm2d this means updating the version number in the `pyproject.yml` file.
+PyPI works by releases that is we have to increase the version number for a release to happen and create the release on github. For pyfm2d this means first updating the version number in the `pyproject.yml` file.
 
 ```
 [build-system]
@@ -273,7 +273,7 @@ dev = [
 ]
 ```
 
-We then create a releast on github using the web interface where the tag ideally matches the version number in the `pyproject.toml` file
+We then have to create a release on github using the web interface where the tag ideally matches the version number in the `pyproject.toml` file
 
 [https://docs.github.com/en/repositories/releasing-projects-on-github/managing-releases-in-a-repository](https://docs.github.com/en/repositories/releasing-projects-on-github/managing-releases-in-a-repository)
 
