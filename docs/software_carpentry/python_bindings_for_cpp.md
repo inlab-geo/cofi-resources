@@ -1,24 +1,24 @@
 # Python bindings for C++ code
 
-pybind11:
+pybind11 - :
 - Primarily working with C++ code and looking for a "natural" way to expose it to Python.
 - The C++ code makes extensive use of modern C++ features.
 - Performance is a significant concern.
 - Comfortable with a C++ build process.
-- Example: https://reaktoro.org/
+- Example: [https://reaktoro.org/](https://reaktoro.org/)
   
-ctypes if:
+ctypes if - :
 - Interfacing with a simple C library.
 - A pure Python solution without a separate compilation step for simple cases.
 - Performance is not the top priority.
 - No complex C++ dependencies or need to wrap C++ classes directly.
-- Example: https://github.com/inlab-geo/pyhk
+- Example: [https://github.com/inlab-geo/pyhk](https://github.com/inlab-geo/pyhk)
 
-SWIG if:
+SWIG if - :
 - Need bindings for multiple target languages in addition to Python.
 - Working with a large C/C++ codebase where automatic generation can save significant effort (though complexity might arise for advanced features).
 - The project already uses SWIG
-- Example: https://github.com/anu-ilab/pyrjmcmc
+- Example: [https://github.com/anu-ilab/pyrjmcmc](https://github.com/anu-ilab/pyrjmcmc)
 
 
 | Feature             | SWIG                                     | ctypes                                  | pybind11                                  |
