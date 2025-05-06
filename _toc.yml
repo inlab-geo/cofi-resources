@@ -9,5 +9,6 @@ parts:
   - caption: Software Carpentry
     chapters:
     - file: docs/software_carpentry/fortran_via_ctypes.md
+    - file: docs/software_carpentry/python_Bindings_for_cpp.md
     - file: docs/software_carpentry/python_packaging.md
     - file: docs/software_carpentry/parallel_python.md
